@@ -1,0 +1,45 @@
++ ld obj/kern/kernel
++ mk obj/kern/kernel.img
+c[?7l[2J[0mSeaBIOS (version 1.15.0-1)
+
+
+iPXE (https://ipxe.org) 00:03.0 CA00 PCI2.10 PnP PMM+07F8B340+07ECB340 CA00
+Press Ctrl-B to configure iPXE (PCI 00:03.0)...                                                                               
+
+
+Booting from ROM..6828 decimal is 15254 octal!
+Physical memory: 131072K available, base = 640K, extended = 130432K
+check_page_free_list() succeeded!
+check_page_alloc() succeeded!
+check_page() succeeded!
+check_kern_pgdir() succeeded!
+check_page_free_list() succeeded!
+check_page_installed_pgdir() succeeded!
+SMP: CPU 0 found 1 CPU(s)
+enabled interrupts: 1 2
+[00000000] new env 00001000
+0xf01e5c9c
+[00001000] user_mem_check assertion failure for va f0100020
+[00001000] free env 00001000
+TRAP frame at 0xeffffe9c from CPU 0
+  edi  0xf02b5044
+  esi  0xf0100020
+  ebp  0xefffff00
+  oesp 0xeffffebc
+  ebx  0x00000000
+  edx  0x00000000
+  ecx  0x4c4eb1ec
+  eax  0x4c4ef50c
+  es   0x----0023
+  ds   0x----0023
+  trap 0x00000000 Divide error
+  err  0x00000000
+  eip  0xf0104558
+  cs   0x----0008
+  flag 0x00000086
+>>>
+>>> kernel panic on CPU 0 at kern/trap.c:246: unhandled trap in kernel
+>>>
+Welcome to the JOS kernel monitor!
+Type 'help' for a list of commands.
+qemu-system-i386: terminating on signal 15 from pid 75813 (make)
